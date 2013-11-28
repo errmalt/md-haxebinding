@@ -11,7 +11,7 @@
 
     <Combine name="${ProjectName}" directory=".">
         <Project name="${ProjectName}" directory="." type="Haxe">
-            <Options BuildFile="${ProjectName}.hxml" DefaultRun="true" OutputFile="bin/${ProjectName}.swf"/>
+            <Options BuildFile="${ProjectName}.hxml" DefaultRun="true"/>
             <Files>
                 <HaxeFile name="src/${ModuleName}.hx" AddStandardHeader="True">
 <![CDATA[package;
