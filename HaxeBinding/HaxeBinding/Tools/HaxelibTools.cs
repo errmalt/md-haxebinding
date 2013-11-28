@@ -12,6 +12,10 @@ namespace MonoDevelop.HaxeBinding.Tools
 
 		static Dictionary<string, List<string>> cache = new Dictionary<string, List<string>>();
 
+		public static bool IsLibraryInstalled(string library) {
+			return GetLibraryPath (library).ToArray ().Length > 0;
+		}
+
 		public static List<string> GetLibraryPath(string library)
 		{
 			if (cache.ContainsKey (library)) {
@@ -35,7 +39,8 @@ namespace MonoDevelop.HaxeBinding.Tools
 			var libsPaths = new List<string> ();
 			var dataList = data.Split (Environment.NewLine.ToCharArray());
 			foreach (string line in dataList) {
-				if (!line.StartsWith ("-D ") && !line.StartsWith ("-L ")) {
+				line = line.Trim ();
+				if (!line.StartsWith ("-D ") && !line.StartsWith ("-L ") && !line.StartsWith("Library " + library + " is not installed")) {
 					libsPaths.Add (line);
 				}
 			}
