@@ -25,6 +25,7 @@ namespace MonoDevelop.HaxeBinding.Tools {
 
 		public List<string> Libs;
 		public List<string> ClassPaths;
+		public Dictionary<string, string> Defines;
 
 		string[] hxmlArgs;
 		int ArgIndex;
@@ -36,6 +37,7 @@ namespace MonoDevelop.HaxeBinding.Tools {
 			Target = null;
 			Libs = new List<string>();
 			ClassPaths = new List<string> ();
+			Defines = new Dictionary<string, string> ();
 
 			string hxml = hxmlFileContent.Replace (Environment.NewLine, " ");
 			hxmlArgs = hxml.Split (' ');
@@ -46,6 +48,14 @@ namespace MonoDevelop.HaxeBinding.Tools {
 			string line;
 			while ((line = nextLine()) != null) {
 				switch (line) {
+				case "-D":
+					string define = nextLine ();
+					string[] split = define.Split ('=');
+					if (split.Length > 1)
+						Defines.Add (split [0], split [1]);
+					else
+						Defines.Add (split [0], split [0]);
+					break;
 				case "-cp":
 					ClassPaths.Add (nextLine ());
 					break;
