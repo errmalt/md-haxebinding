@@ -39,7 +39,7 @@ namespace MonoDevelop.HaxeBinding.Tools
 			var libsPaths = new List<string> ();
 			var dataList = data.Split (Environment.NewLine.ToCharArray());
 			foreach (string line in dataList) {
-				line = line.Trim ();
+				//line = line.Trim ();
 				if (!line.StartsWith ("-D ") && !line.StartsWith ("-L ") && !line.StartsWith("Library " + library + " is not installed")) {
 					libsPaths.Add (line);
 				}

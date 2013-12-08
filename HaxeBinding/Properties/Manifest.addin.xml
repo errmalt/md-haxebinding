@@ -117,8 +117,7 @@
 	
 	<Extension path="/MonoDevelop/ProjectModel/MSBuildItemTypes">
 		<SolutionItem type="MonoDevelop.HaxeBinding.Projects.HaxeProject" extension="hxmd" guid="{73443E56-3503-11DE-B03D-001DBA02A2FC}"/>
-		<SolutionItem type="MonoDevelop.HaxeBinding.Projects.HaxeProject" extension="oflmd" guid="{9344BDBB-3E7f-41FC-A0DD-8665D75EE146}"/>
-		<!-- GUID for openfl  -->
+		<SolutionItem type="MonoDevelop.HaxeBinding.Projects.OpenFLProject" extension="oflmd" guid="{9344BDBB-3E7f-41FC-A0DD-8665D75EE146}"/>
 	</Extension>
 	
 	<!-- Code Completion -->
@@ -132,14 +131,6 @@
 		        features="ConditionalBreakpoints, Tracepoints, Catchpoints, Attaching, DebugFile, Stepping, Pause, Breakpoints, Disassembly"
 		        type="MonoDevelop.HaxeBinding.HxcppDebuggerFactory" />
     </Extension>
-    
-    <!--<Extension path="/MonoDevelop/Debugging/DebuggerEngines">
-            <DebuggerEngine
-                    id="MonoDevelop.HaxeBinding.SoftDebugger"
-                    name="Haxe debugger (Soft)"
-                    features="Breakpoints, Pause, Stepping, DebugFile, ConditionalBreakpoints, Tracepoints, Catchpoints"
-                    type="MonoDevelop.HaxeBinding.HxcppDebuggerEngine" />
-    </Extension>-->
 	<Runtime>
 	</Runtime>
 </Addin>
