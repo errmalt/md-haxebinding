@@ -10,7 +10,7 @@
     </TemplateConfiguration>
 	
     <Combine name="${ProjectName}" directory=".">
-        <Project name="${ProjectName}" directory="." type="OpenFL">
+        <Project name="${ProjectName}" directory="." type="Haxe">
             <Options BuildFile="project.xml" />
             <Files>
 				<HaxeFile name="Assets/openfl.svg">
